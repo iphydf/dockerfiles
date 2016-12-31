@@ -1,3 +1,10 @@
 language: generic
 
 script: make
+
+branches:
+  only:
+  - master
+
+git:
+  depth: 1
