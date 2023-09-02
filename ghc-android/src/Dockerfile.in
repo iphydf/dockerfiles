@@ -1,5 +1,5 @@
 # vim:ft=dockerfile
-FROM toktoknet/ghc:8.10.7
+FROM toktoknet/ghc:@VERSION@
 LABEL maintainer="@MAINTAINER@"
 
 #
@@ -79,9 +79,6 @@ RUN ["./build-cross-compile-cabal.sh"]
 
 COPY user-scripts/install-happy.sh $BASE/
 RUN ["./install-happy.sh"]
-
-COPY user-scripts/add-bindir-links.sh $BASE/
-RUN ["./add-bindir-links.sh"]
 
 COPY user-scripts/update-cabal-install.sh $BASE/
 RUN ["./update-cabal-install.sh"]

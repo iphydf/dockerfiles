@@ -6,6 +6,7 @@ export DEBIAN_FRONTEND="noninteractive"
 
 apt-get update
 apt-get -y --no-install-recommends install \
+  alex \
   autoconf \
   automake \
   autopoint \
@@ -17,8 +18,9 @@ apt-get -y --no-install-recommends install \
   ghc \
   git \
   gtk-doc-tools \
+  happy \
   libtool \
-  llvm-11 \
+  llvm-12 \
   p7zip-full \
   pkg-config \
   python3 \

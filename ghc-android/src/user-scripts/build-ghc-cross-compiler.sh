@@ -11,8 +11,6 @@ mv ghc-"$GHC_RELEASE" "$GHC_SRC"
 apply_patches 'ghc-*' "$GHC_SRC"
 pushd "$GHC_SRC" >/dev/null
 
-cp libraries/base/config.sub libraries/unix/config.sub
-
 # Setup build.mk
 cat >mk/build.mk <<EOF
 Stage1Only           = YES
@@ -31,7 +29,6 @@ BUILD_DOCBOOK_PDF    = NO
 EOF
 
 # Configure
-./boot
 ./configure \
   AS="$NDK_TOOLCHAIN-clang" \
   CC="$NDK_TOOLCHAIN-clang" \

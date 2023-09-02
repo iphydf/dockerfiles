@@ -7,7 +7,7 @@ INSTALL="install -o $USER -g $USER"
 
 deluser "$USER" --remove-home 2>/dev/null
 rm -rf "$HOME"
-cat <<EOF | adduser $USER --gecos $USER 2>&1
+cat <<EOF | useradd $USER --comment $USER --create-home 2>&1
 $PASSWORD
 $PASSWORD
 EOF

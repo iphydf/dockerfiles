@@ -19,12 +19,11 @@ BUILD_DOCBOOK_PDF  = NO
 EOF
 
 # Configure
-perl boot
 ./configure --prefix="$GHC_STAGE0_PREFIX"
 
 #
 # The nature of parallel builds that once in a blue moon this directory does not get created
-# before we try to "/usr/bin/install -c -m 644  utils/hsc2hs/template-hsc.h "/home/androidbuilder/.ghc/android-host/lib/ghc-8.0.1"
+# before we try to "/usr/bin/install -c -m 644  utils/hsc2hs/template-hsc.h "/home/androidbuilder/.ghc/android-host/lib/ghc-9.4.5"
 # This causes a conflict.
 #
 /usr/bin/install -c -m 755 -d "$GHC_STAGE0_PREFIX/lib/ghc-$GHC_RELEASE/include"
