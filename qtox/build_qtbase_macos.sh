@@ -45,7 +45,7 @@ fi
 
 # We want -Werror to catch warnings related to macOS version compatibility.
 # We silence unused-variable because disabling features (like filesystemwatcher) can leave variables unused in Qt's source.
-sed -i '' -e 's/-Wextra/-Wextra -Werror "-Wno-#warnings" -Wno-cast-function-type-mismatch -Wno-deprecated-declarations -Wno-unused-but-set-variable -Wno-unused-variable -Wno-vla-cxx-extension/' cmake/QtCompilerFlags.cmake
+sed -i '' -e 's/-Wextra/-Wextra -Werror -Wno-unknown-warning-option "-Wno-#warnings" -Wno-cast-function-type-mismatch -Wno-deprecated-declarations -Wno-unused-but-set-variable -Wno-unused-variable -Wno-vla-cxx-extension/' cmake/QtCompilerFlags.cmake
 
 mkdir _build && pushd _build
 ../configure \
