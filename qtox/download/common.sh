@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later AND MIT
 #     Copyright (c) 2017-2021 Maxim Biro <nurupo.contributions@gmail.com>
 #     Copyright (c) 2021 by The qTox Project Contributors
+#     Copyright (c) 2026 The TokTok team
 
 check_sha256() {
   if uname | grep -q Darwin; then
@@ -29,7 +30,7 @@ download_file() {
 }
 
 download_verify_extract_tarball() {
-  # Downlaoads the tarball at URL, ensures it has an sha256sum of HASH and
+  # Downloads the tarball at URL, ensures it has an sha256sum of HASH and
   # extracts it to the CWD
 
   local URL="$1"
