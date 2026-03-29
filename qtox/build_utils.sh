@@ -128,6 +128,10 @@ parse_arch() {
     MAKE_JOBS="$(sysctl -n hw.ncpu)"
     CMAKE_TOOLCHAIN_FILE=("-DCMAKE_OSX_DEPLOYMENT_TARGET=$MACOS_MINIMUM_SUPPORTED_VERSION")
   elif [[ "$SCRIPT_ARCH" == "ios-"* ]]; then
+    if [ "$SCRIPT_ARCH" == "ios-armv7" ] || [ "$SCRIPT_ARCH" == "ios-armv7s" ]; then
+      # iOS 10 is the last deployment target supported for 32-bit builds, per a clang warning
+      IOS_MINIMUM_SUPPORTED_VERSION="10.0"
+    fi
     ARCH="${SCRIPT_ARCH#ios-}"
     DEP_PREFIX="${DEP_PREFIX:-/opt/buildhome}"
     mkdir -p "$DEP_PREFIX"
