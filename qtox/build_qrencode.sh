@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later AND MIT
 # Copyright © 2017-2021 Maxim Biro <nurupo.contributions@gmail.com>
 # Copyright © 2021 by The qTox Project Contributors
-# Copyright © 2024-2025 The TokTok team
+# Copyright © 2024-2026 The TokTok team
 
 set -euxo pipefail
 
@@ -31,6 +31,7 @@ fi
   -DCMAKE_BUILD_TYPE="$CMAKE_BUILD_TYPE" \
   -DCMAKE_INSTALL_PREFIX="$DEP_PREFIX" \
   -DCMAKE_OSX_DEPLOYMENT_TARGET="$DEPLOYMENT_TARGET" \
+  -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
   "${CMAKE_TOOLCHAIN_FILE[@]}" \
   -DWITH_TOOLS=OFF \
   -DBUILD_SHARED_LIBS="$BUILD_SHARED_LIBS"
