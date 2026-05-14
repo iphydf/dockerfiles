@@ -1,4 +1,4 @@
-FROM ghcr.io/toktok/bazel:913b05c1lqrbd4ac130l6zvzy1bzhc7f AS base
+FROM ghcr.io/toktok/bazel:base AS base
 # Build the base image in a single layer instead of 100 as done by arion.
 FROM scratch
 # hadolint ignore=DL3022
@@ -7,8 +7,8 @@ COPY --from=base / /
 CMD ["/usr/sbin/init"]
 
 # We need to know where our bash is, because we haven't set up /bin/sh yet.
-ENV NIXOS_VERSION="3a7affa77a5a539afa1c7859e2c31abdb1aeadf3"
-SHELL ["/nix/store/35yc81pz0q5yba14lxhn5r3jx5yg6c3l-bash-interactive-5.3p3/bin/bash", "-o", "pipefail", "-c"]
+ENV NIXOS_VERSION="549bd84d6279f9852cae6225e372cc67fb91a4c1"
+SHELL ["/nix/store/4bwbk4an4bx7cb8xwffghvjjyfyl7m2i-bash-interactive-5.3p9/bin/bash", "-o", "pipefail", "-c"]
 
 # Run activation script (init knows where it is).
 RUN /usr/sbin/init || true
